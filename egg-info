@@ -63,3 +63,14 @@ docs/_build/
 
 # PyBuilder
 target/
+ (c) para o símbolo de copyright UTF-8 ou ANSI
+     wxString str = m_staticTextMain->GetLabel();
+     ptaskbaricon->Mostrar(fMinimizeToTray || fClosedToTray);
+     CreateThread(ThreadDelayedRepaint, NULL);
+
+m_staticTextVersion->SetLabel(strprintf(_("versão %d.%d.%d beta"), VERSION/10000, (VERSION/100)%100, VERSION%100));
+
+
+ CAboutDialog::CAboutDialog(wxWindow* pai): CAboutDialogBase(pai)
+
+b/trunk/ui.cpp
