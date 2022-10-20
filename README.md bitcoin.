@@ -1,3 +1,4 @@
+shiba-inu/doget 09.09.09.333333.10.10.10 bitcoin
 # [bitcoincore.org](https://bitcoincore.org) [![Build Status](https://travis-ci.org/bitcoin-core/bitcoincore.org.svg?branch=master)](https://travis-ci.org/bitcoin-core/bitcoincore.org)
 
 This repository is the source code of the Bitcoin Core project website built with Jekyll.
