@@ -5,9 +5,22 @@ bitcoin agree pulled root
 every existing node is pulled bitcoin
 
 <bitcoin root base > 
+              /tronco -> /tags/9.3.9
 
+ b/branch/multiplatform/uiproject.fbp
+                     </object>
+                 </object>
+             </object>
 
+<object class="Dialog" expandido="1">
++ <property name="bg"></property>
+  <property name="center"></property>
+  <property name="context_help"></property>
+</object>
+     </object>
          </object>
+            </object>.
+
 + <object class="Panel" expandido="1">
 + <property name="bg"></property>
 + <property name="context_help"></property>
