@@ -1,0 +1,35 @@
+<div class="logo-wrap" role="banner">
+		<div class="row">
+			<div class="col-12 col-lg-6 order-lg-2">
+				<div id="loginbar">
+					<div class="row">
+						<div class="col-12 text-right">
+							<!--<button type="button" class="" data-bs-toggle="modal" data-bs-target="#donateModal">
+							  <span class="btn-text"><i class="fas fa-heart"></i> Donate<span>
+							</button>
+							<button type="button" id="connect" class="" data-bs-toggle="modal" data-bs-target="#web3Modal">
+							  <span class="spinner"></span> <span class="btn-text">Connect Wallet<span>
+							</button>
+							
+							<div id="profile" style="display:none;float:left"><span id="profilename"></span>
+								<button type="button" class="" data-bs-toggle="modal" data-bs-target="#web3Profile"><i class="fas fa-pen"></i></button>
+								<button type="button" class="" id="logout"><i class="fas fa-power-off"></i></button>
+							</div>
+							-->
+							
+							<ul class="langswitcher"><i id="darkmode" class="far fa-moon" data-darkmode="false" title="Dark Mode on/off"></i>
+								<li class="lang-item lang-item-25 lang-item-en current-lang lang-item-first"><a lang="en-US" hreflang="en-US" href="https://www.blockchaincenter.net/en/bitcoin-rainbow-chart/"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAALCAMAAABBPP0LAAAAmVBMVEViZsViZMJiYrf9gnL8eWrlYkjgYkjZYkj8/PujwPybvPz4+PetraBEgfo+fvo3efkydfkqcvj8Y2T8UlL8Q0P8MzP9k4Hz8/Lu7u4DdPj9/VrKysI9fPoDc/EAZ7z7IiLHYkjp6ekCcOTk5OIASbfY/v21takAJrT5Dg6sYkjc3Nn94t2RkYD+y8KeYkjs/v7l5fz0dF22YkjWvcOLAAAAgElEQVR4AR2KNULFQBgGZ5J13KGGKvc/Cw1uPe62eb9+Jr1EUBFHSgxxjP2Eca6AfUSfVlUfBvm1Ui1bqafctqMndNkXpb01h5TLx4b6TIXgwOCHfjv+/Pz+5vPRw7txGWT2h6yO0/GaYltIp5PT1dEpLNPL/SdWjYjAAZtvRPgHJX4Xio+DSrkAAAAASUVORK5CYII=" alt="English" width="16" height="11" style="width: 16px; height: 11px;"></a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-12 col-lg-6 order-lg-1">
+				<div class="logo">
+					<a href="https://www.blockchaincenter.net/en/" title="Blockchaincenter" rel="home">
+						<img class="no-lazyload" src="/wp-content/uploads/Blockchaincenter.net%20Logo.png?id=1" width="250">
+					</a>
+				</div>
+			</div>
+		</div>	
+	</div>
