@@ -406,3 +406,25 @@ financial chart adapter *#67#
       <td align="center"><a href="http://matheu.srv.br"><img src="https://avatars0.githubusercontent.com/u/23284276?v=4?s=100" width="100px;" alt="Matheus Rocha Vieira"/><br /><sub><b>Matheus Rocha Vieira</b></sub></a><br /><a href="#translation-MatheusRV" title="Translation">🌍</a> <a href="https://github.com/all-contributors/all-contributors/commits?author=MatheusRV" title="Code">💻</a> <a href="https://github.com/all-contributors/all-contributors/commits?author=MatheusRV" title="Documentation">📖</a></td>
 
 
+
+<div class="logo-wrap" role="banner">
+		<div class="row">
+			<div class="col-12 col-lg-6 order-lg-2">
+				<div id="loginbar">
+					<div class="row">
+						<div class="col-12 text-right">
+							<!--<button type="button" class="" data-bs-toggle="modal" data-bs-target="#donateModal">
+							  <span class="btn-text"><i class="fas fa-heart"></i> Donate<span>
+							</button>
+							<button type="button" id="connect" class="" data-bs-toggle="modal" data-bs-target="#web3Modal">
+							  <span class="spinner"></span> <span class="btn-text">Connect Wallet<span>
+							</button>
+							
+							<div id="profile" style="display:none;float:left"><span id="profilename"></span>
+								<button type="button" class="" data-bs-toggle="modal" data-bs-target="#web3Profile"><i class="fas fa-pen"></i></button>
+								<button type="button" class="" id="logout"><i class="fas fa-power-off"></i></button>
+							</div>
+							-->
+
+
+
