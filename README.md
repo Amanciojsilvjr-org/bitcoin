@@ -214,7 +214,7 @@ link to your website. [[Become a sponsor](https://opencollective.com/curl#sponso
 
 
 
-<p><img align="left" src="https://github-readme-stats.vercel.app/api/top-langs?username=&show_icons=true&locale=en&layout=compact" alt="bits" /></p>
+<p><img align="left" c.c." alt="bits" /></p>
 <br>//amanciojsilvjr<bitcoin> <👉>
 <br>//amanciojsilvjr<bitcoin> <👉>
 <br>//amanciojsilvjr<bitcoin> <👉>
@@ -230,10 +230,7 @@ editor.find.seedSearchStringFromSelection to false.
 Find In Selection#
 
 
-[[[{{{(((<amanciojsilvjr-bitcoin" Shiba-Inu >}}}]]])))
 
-
-```
 
 
 
