@@ -63,24 +63,312 @@ A static [btc](https://g.page/amanciojsilvjr) site for hosting [amanciojsilvjr.c
 Bitcoin (BTC) is a decentralized currency that eliminates the need for central authorities such as banks or governments by using a peer-to-peer 
 internet network to confirm transactions directly between users [jodhqesh](https://github.com/BTCXBT).
 
-##  [install instructions](https://gohugo.io/getting-started/installing/).
 
+# Welcome to developer.bitcoin.org's codebase
+
+Live site: [developer.bitcoin.org](https://developer.bitcoin.org)
+
+Report problems or help improve the site by opening a [new
+issue](https://github.com/bitcoin-dot-org/developer.bitcoin.org/issues) or [pull
+request](https://github.com/bitcoin-dot-org/developer.bitcoin.org/compare).
+
+## How to contribute
+
+This repo hosts the sources for the Bitcoin developer documentation. One of the
+easiest ways to get started contributing is by rereading the site and looking for
+inconsistencies in terminology, style, etc., and also in any illustrations.
+
+Prior to contributing, please review the [style
+guide](https://github.com/bitcoin-dot-org/developer.bitcoin.org/tree/master/docs/style-guide.md).
+
+Much of the content displayed on the is converted from Markdown to
+[reStructuredText (RST)](http://docutils.sourceforge.net/rst.html) and rendered
+with [Sphinx](http://www.sphinx-doc.org).
+
+### Render the documentation locally
+
+To render the documentation locally you first need to install Sphinx and the
+required theme modules, e.g. by running
+
+    pip install -r requirements.txt
+
+This should be done from the root of this repo. Then you can execute Sphinx by calling
+
+    make html
+
+This will generate HTML from the RST sources in the directory `_build/html`.
+It's all static HTML so you can just open the index.html file in your browser
+locally to view the rendered documentation.
+
+### Generation of RPC docs
+
+The documentation of the RPC commands is automatically generated from the help
+of a bitcoin client with a [helper
+tool](https://github.com/bitcoin-dot-org/developer.bitcoin.org/tree/master/helpers/rpc).
+This is the content in the [reference/rpc](reference/rpc) directory. Changes in
+these files need to be done through the helper tool or at least backported to
+the helper tool after doing them in this repo.
+
+## Code of Conduct
+
+Participation in this project is subject to a [Code of
+Conduct](https://github.com/bitcoin-dot-org/developer.bitcoin.org/blob/master/CODE_OF_CONDUCT.md).
+main 
+ space 
+# [bitcoincore.org](https://bitcoincore.org)
+
+This repository is the source code of the Bitcoin Core project website built with Jekyll.
+
+## Directory structure
+
+  - `_posts/<lang>/posts` for blog articles.
+  - `_posts/<lang>/pages` for static pages.
+  - `_posts/<lang>/releases` for Bitcoin Core release notes
+
+File names *must* be in the format `Y-m-d-title.md`, e.g. `2015-12-31-title.md`. File names can be translated.
+
+## Translations
+
+See [CONTRIBUTING.md](/CONTRIBUTING.md#translation-process) for more information.
+
+## Front Matter notes
+
+The following `Front Matter` is required for the multilingual setup in all files. The required fields are as follows:
+
+  - `name:`      group name for unique article. Each translation must share the same group name, e.g. `october15-report`
+  - `id:`        each article translation must have a unique ID. Use the language code + `-name` field. e.g. `en-october15-report`
+  - `permalink:` the must include the language code, end a trailing slash, e.g. `/en/2015/12/31/report/`.
+  - `title:`     the translated title of the article
+  - `type:`      the content type (`pages`, `posts`, `releases`, `meetings`, etc.)
+  - `layout:`    the layout template (`page`, `post`, etc.)
+  - `lang:`      the language code (`en`, `fr`, etc.)
+
+```
+---
+title: Short Title
+name: short-title
+layout: post
+type: posts
+lang: en
+id: en-short-title
+permalink: /en/2016/01/01/short-title
+---
+```
+
+## Building
+
+This website is based on [Jekyll](https://jekyllrb.com/).  To build
+locally, [install Ruby 2.5.5](https://gorails.com/setup) using system
+packages, [rvm](https://rvm.io), [rbenv](https://github.com/rbenv/rbenv), or another method.
+Then clone this repository and change directory into it:
+
+    git clone https://github.com/bitcoin-core/bitcoincore.org.git
+    cd bitcoincore.org
+
+Install the `bundle` utility using the Ruby package manager, `gem`, and
+then use `bundle` to install the rest of the Ruby packages needed to
+build this site.  Note, depending on your system configuration, you may
+need to run `gem` as the superuser by putting "sudo" followed by a space
+before the `gem` command.  You shouldn't need to use `sudo` with the
+`bundle` command.
+
+    gem update --system
+    gem install bundler
+    bundle install
+
+To preview the site (this will launch a tiny webserver on port 4000):
+
+    bundle exec jekyll server --future
+
+To simply build the site (output placed in the `_site` directory):
+
+    bundle exec jekyll build --future
+
+Note that the `--future` parameter is only required if you're adding any
+pages dated in the future (such as prepared release announcements).
+
+To test the site:
+
+    bundle exec jekyll build --future --drafts --unpublished
+    bundle exec htmlproofer --check-html --disable-external --url-ignore '/^\/bin/.*/' ./_site
+
+The additional parameters to `jekyll build` ensure that all possible
+pages are built and checked.
+
+## Contributing
+
+Contributions welcome. Please see [CONTRIBUTING.md](/CONTRIBUTING.md) for details.
+
+## References
+
+The website uses an old version of the [Minimal Mistakes theme][].  The
+theme's website provides [documentation][mm docs], including information
+about [configuration variables][mm config], creating [pages and posts][mm
+content], adding [new Javascript][mm js], and more.  Note that
+current documentation may describe features not available in the old
+version of the theme used by the website.
+
+[minimal mistakes theme]: https://mmistakes.github.io/minimal-mistakes/
+[mm docs]: https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/
+[mm config]: https://mmistakes.github.io/minimal-mistakes/docs/configuration/
+[mm content]: https://mmistakes.github.io/minimal-mistakes/docs/posts/
+[mm js]: https://mmistakes.github.io/minimal-mistakes/docs/javascript/
+# Welcome to Bitcoin.org's Codebase
+
+Current Build Status: ![Build Status](https://travis-ci.org/bitcoin-dot-org/bitcoin.org.svg?branch=master)
+
+Live site: [Bitcoin.org](https://bitcoin.org)
+
+Report problems or help improve the site by opening a [new issue](https://github.com/bitcoin-dot-org/bitcoin.org/issues/new) or [pull request](https://github.com/bitcoin-dot-org/bitcoin.org/compare).
+
+## Earn Bitcoin for Contributing
+Open issues [labeled with "Bounty"](https://github.com/bitcoin-dot-org/bitcoin.org/labels/Bounty)
+have bounties on them. Viewing the issue will reveal the value of the bounty.
+Submit a pull request resolving the issue along with an accompanying note or
+comment containing a bitcoin address and automatically receive a payment in the
+amount of the bounty if it gets merged.
+
+## How to Participate
+The following quick guides will help you get started:
+
++ [Becoming a Contributor](https://github.com/bitcoin-dot-org/bitcoin.org/blob/master/docs/become-a-contributor.md)
++ [Working with GitHub](https://github.com/bitcoin-dot-org/bitcoin.org/blob/master/docs/working-with-github.md)
++ [Setting Up Your Environment](https://github.com/bitcoin-dot-org/bitcoin.org/blob/master/docs/setting-up-your-environment.md)
++ [Improving Developer Documentation](https://github.com/bitcoin-dot-org/developer.bitcoin.org/)
++ [Assisting with Translations](https://github.com/bitcoin-dot-org/bitcoin.org/blob/master/docs/assisting-with-translations.md)
++ [Adding Exchanges](https://github.com/bitcoin-dot-org/bitcoin.org/blob/master/docs/adding-exchanges.md)
++ [Managing Wallets](https://github.com/bitcoin-dot-org/bitcoin.org/blob/master/docs/managing-wallets.md)
++ [Adding Events, Release Notes and Alerts](https://github.com/bitcoin-dot-org/bitcoin.org/blob/master/docs/adding-events-release-notes-and-alerts.md)
++ [Adding Blog Posts](https://github.com/bitcoin-dot-org/bitcoin.org/blob/master/docs/adding-blog-posts.md)
++ [Miscellaneous / Other](https://github.com/bitcoin-dot-org/bitcoin.org/blob/master/docs/miscellaneous.md)
+
+### Code of Conduct
+
+Participation in this project is subject to a [Code of Conduct](https://github.com/bitcoin-dot-org/bitcoin.org/blob/master/CODE_OF_CONDUCT.md).
+ 
+Bitcoin Core integration/staging tree
+=====================================
+
+https://bitcoincore.org
+
+For an immediately usable, binary version of the Bitcoin Core software, see
+https://bitcoincore.org/en/download/.
+
+What is Bitcoin Core?
+---------------------
+
+Bitcoin Core connects to the Bitcoin peer-to-peer network to download and fully
+validate blocks and transactions. It also includes a wallet and graphical user
+interface, which can be optionally built.
+
+Further information about Bitcoin Core is available in the [doc folder](/doc).
+
+License
+-------
+
+Bitcoin Core is released under the terms of the MIT license. See [COPYING](COPYING) for more
+information or see https://opensource.org/licenses/MIT.
+
+Development Process
+-------------------
+
+The `master` branch is regularly built (see `doc/build-*.md` for instructions) and tested, but it is not guaranteed to be
 completely stable. [Tags](https://github.com/bitcoin/bitcoin/tags) are created
 regularly from release branches to indicate new official, stable release versions of Bitcoin Core.
+
+The https://github.com/bitcoin-core/gui repository is used exclusively for the
+development of the GUI. Its master branch is identical in all monotree
+repositories. Release branches and tags do not exist, so please do not fork
+that repository unless it is for development reasons.
+
+The contribution workflow is described in [CONTRIBUTING.md](CONTRIBUTING.md)
+and useful hints for developers can be found in [doc/developer-notes.md](doc/developer-notes.md).
+
+Testing
+-------
+
+Testing and code review is the bottleneck for development; we get more pull
+requests than we can review and test on short notice. Please be patient and help out by testing
+other people's pull requests, and remember this is a security-critical project where any mistake might cost people
+lots of money.
+
+### Automated Testing
+
+Developers are strongly encouraged to write [unit tests](src/test/README.md) for new code, and to
+submit new unit tests for old code. Unit tests can be compiled and run
+(assuming they weren't disabled in configure) with: `make check`. Further details on running
+and extending unit tests can be found in [/src/test/README.md](/src/test/README.md).
+
+There are also [regression and integration tests](/test), written
+in Python.
+These tests can be run (if the [test dependencies](/test) are installed) with: `test/functional/test_runner.py`
+
+The CI (Continuous Integration) systems make sure that every pull request is built for Windows, Linux, and macOS,
+and that unit/sanity tests are run automatically.
+
+### Manual Quality Assurance (QA) Testing
+
+Changes should be tested by somebody other than the developer who wrote the
+code. This is especially important for large or high-risk changes. It is useful
+to add a test plan to the pull request description if testing the changes is
+not straightforward.
+
+Translations
+------------
+
+Changes to translations as well as new translations can be submitted to
 [Bitcoin Core's Transifex page](https://www.transifex.com/bitcoin/bitcoin/).
 
 Translations are periodically pulled from Transifex and merged into the git repository. See the
+[translation process](doc/translation_process.md) for details on how this works.
 
-### Preview your transcript
+**Important**: We do not accept translation changes as GitHub pull requests because the next
+pull from Transifex would automatically overwrite them again.
 
-Having a local build allows you to see how your transcript will be displayed in the website.
 
-The `preview_branch.sh` script allows you to preview how the changes in your branch will be displayed by building locally the website using your branch as the content submodule. Usage:
+# Amanciojsilvjr bitcoin scroll 
+fig = plt.figure()
+# naming the title of the plot
 
-```
-./preview_branch.sh <your-github-account> <your-branch-name> amanciojsilvjr 
-```
+ax1 = fig.add_axes([0, 0, 2, 2])
+x = [0,T/10, T/5, (3/10)*T, (4/10)*T,(5/10)*T,(6/10)*T,(7/10)*T,(8/10)*T,(9/10)*T,T]
+ax1.plot(market_time)
+labels = [0,.5, 1, 1.5, 2, 2.5, 3,3.5,4,4.5,5]
+plt.yticks(x,labels)
+plt.xticks(x,labels)
+plt.xlabel("Time (year)")
+plt.ylabel("Market time (in year)")
+plt.title("Where is the market time (compared to actual time)")
+plt.show()
+150.000.000 btc original run third party blockchain 
+fractional_reserve = liquid_reserve/liabilities
+fig = plt.figure()
+# naming the title of the plot
 
+ax1 = fig.add_axes([0, 0, 2, 2])
+x = [0,T/10, T/5, (3/10)*T, (4/10)*T,(5/10)*T,(6/10)*T,(7/10)*T,(8/10)*T,(9/10)*T,T]
+ax1.plot(fractional_reserve)
+labels = [0,.5, 1, 1.5, 2, 2.5, 3,3.5,4,4.5,5]
+plt.xticks(x,labels)
+plt.xlabel("Time (year)")
+plt.ylabel("Amount of reserve")
+plt.title("Liquid reserve over time")
+plt.show()
+btc@xbt
+fig = plt.figure()
+# naming the title of the plot
+
+ax1 = fig.add_axes([0, 0, 2, 2])
+x = [0,T/10, T/5, (3/10)*T, (4/10)*T,(5/10)*T,(6/10)*T,(7/10)*T,(8/10)*T,(9/10)*T,T]
+ax1.plot(percentage_usd_deposited*100)
+labels = [0,.5, 1, 1.5, 2, 2.5, 3,3.5,4,4.5,5]
+plt.xticks(x,labels)
+plt.xlabel("Time (year)")
+plt.ylabel("%")
+plt.title("% of USD currently deposited")
+plt.show()
+netanojohhny@gmail.com
+bitcoin.org/bitcoin-bitcoin
 ## bitcoin XBT
 
 ![STICKER_20220521064014](https://user-images.githubusercontent.com/114337456/192167544-79fc2ad1-70fb-4d7b-a1f6-598fe742ff1d.gif)
@@ -171,50 +459,13 @@ skipKeywords:
   - wip
 ## Backers
 
-Thank you to all our backers! 🙏 [[Become a backer](https://opencollective.com/curl#backer)]
+Thank you to all our backers! 🙏 [[Become a backer](https://bitcoin.org/curl#backer)]
 
-[![Open Collective Backers](https://opencollective.com/curl/backers.svg?width=890)](https://opencollective.com/curl#backers)
+)
 
 ## Sponsors
+Gif:<>\∆
 
-Support this project by becoming a sponsor. Your logo will show up here with a
-link to your website. [[Become a sponsor](https://opencollective.com/curl#sponsor)]
-<!-- markdown-link-check-disable -->
-[![Open Collective Sponsor 0](https://opencollective.com/curl/sponsor/0/avatar.svg)](https://opencollective.com/curl/sponsor/0/website)
-[![Open Collective Sponsor 1](https://opencollective.com/curl/sponsor/1/avatar.svg)](https://opencollective.com/curl/sponsor/1/website)
-[![Build Status](https://github.com/tree-sitter/tree-sitter/workflows/CI/badge.svg)](https://github.com/tree-sitter/tree-sitter/actions)
-[![Build status](https://ci.appveyor.com/api/projects/status/vtmbd6i92e97l55w/branch/master?svg=true)](https://ci.appveyor.com/project/maxbrunsfeld/tree-sitter/branch/master)
-[![DOI](https://zenodo.org/badge/14164618.svg)](https://zenodo.org/badge/latestdoi/14164618)
-
-
-[![My Skills](https://skillicons.dev/icons?i=js,html,css,wasm)](https://skillicons.dev)
-
-
-
-[![My Skills](https://skillicons.dev/icons?i=java,kotlin,nodejs,figma&theme=light)](https://skillicons.dev)
-
-
-
-
-[![My Skills](https://skillicons.dev/icons?i=aws,gcp,azure,react,vue,flutter&perline=3)](https://skillicons.dev)
-
-
-
-<p align="center">
- <a href="https://skillicons.dev">
- <img src="https://skillicons.dev/icons?i=git,kubernetes,docker,c,vim" />
- </a>
-</p>
-
-
-    
-
-
-
-
-
-
-<p><img align="left" c.c." alt="bits" /></p>
 <br>//amanciojsilvjr<bitcoin> <👉>
 <br>//amanciojsilvjr<bitcoin> <👉>
 <br>//amanciojsilvjr<bitcoin> <👉>
@@ -227,7 +478,7 @@ source e passe um sinalizador de visibilidade (--public, --private ou --internal
 
 editor.find.seedSearchStringFromSelection to false.
 
-Find In Selection#
+Find In Selection #
 
 
 # bitcoin <e> script<a/b> amanciojsilvjr® https://facebook.com/amanciojunior
@@ -395,11 +646,11 @@ github@amanciojsilvjr.v2
 
   script: @v2 c.c In this reading adaptation congregation of invading IPs 
    </Java]} cod '3.8.5.3.0.3.4. https://sourceforge.net/projects/bitcoin
-https://github.com/Cyborg-bitcoin/bitcoin
+https://github.com/ZeuZZueZ/bitcoin
 each main read displays 
    `` Phantom \(github@v2) ``
 
-  https://github.com/Cyborg-Bitcoin/ 
+  https://github.com/ZeuZZueZ/ 
 } `main
  }` main
   } ` main</a> c.c amanciojsilvjr bitcoin c.c
@@ -417,7 +668,7 @@ each main read displays
        <bitcoin>
         <bitcoin>
          <bitcoin>
-   https://github.com/Cyborg-Bitcoin/ 
+   https://github.com/ZeuZZueZ/ 
 } `main
  }` main
   } ` main</a> c.c amanciojsilvjr bitcoin c.c
@@ -429,7 +680,7 @@ each main read displays
  } evolves :0.1
   } evolves :0.2 
    } evolves :0.3 
-      https://github.com/Cyborg-Bitcoin/ 
+      https://github.com/ZeuZZueZ/ 
 } `main
  }` main
   } ` main</a> c.c amanciojsilvjr bitcoin c.c
@@ -441,7 +692,7 @@ each main read displays
       } evolves :0.6
 } \deu.>te\][j.j] .o1.
             urs.corg-arc'nur.)}] orkut dynamic reading.
-  https://github.com/Cyborg-Bitcoin/ 
+  https://github.com/ZeuZZueZ/ 
 } `main
  }` main
   } ` main</a> bitcoin.c amanciojsilvjr bitcoin a.a bitcoin.org
@@ -465,7 +716,7 @@ AC_ARG_ENABLE([external-signer],
    <\z> bitcoin.c.c.j]}\Z.z ^w`o0.79.google "co'm 
 
 http <orkut> joazinho_mc commit bitcoin org <34.73.4> https://g.page/amanciojsilvjr bitcoin https://github.com/SatoshiFake
-https://github.com/SatoshiBTCXBT/
+https://github.com/ZeuZZueZ/
 https://github.com/ZeuZZueZ/
 bitcoin tree creator encryption cryptocurrencies  sets x.19
 amanciojsilvjr x.21
@@ -501,7 +752,7 @@ full execution enhancing system-wide life regression.
 
 <li><a href="https://github.com/github">action github</a></li>
           <li><a href="https://github.com/github">github github</a></li>
-          <li><a href="https://github.com/SatoshiBTCXBT/SatoshiBTCXBT/new/main</a></li>
+          <li><a href="https://github.com/ZeuZZueZ/ZeuZZueZ/new/main</a></li>
           <li><a href="https://github.com/c-github">github github</a></li>
       </ul>bitcoin-code set orkut Johhny'Joazinho2005
   </div>Distribution-https:
@@ -533,11 +784,11 @@ bitcoinprotocolavance
 Returns a list of external signers from -signer.
 
 Result:bitcoinprotocolavance
-{                               (satoshibtcxbt object)
-  "signers" : [                 (satoshibtcxbt array)
-    {                           (satoshibtcxbt object)
-      "fingerprint" : "satoshi",    (satoshibtcxbt) Master key fingerprint
-      "name" : "btc"            (satoshibtcxbt) Device name
+{                               (ZeuZZueZ object)
+  "signers" : [                 (ZeuZZueZ array)
+    {                           (ZeuZZueZ object)
+      "fingerprint" : "satoshi",    (ZeuZZueZ) Master key fingerprint
+      "name" : "btc"            (ZeuZZueZ) Device name
     },
     ...
   ]
@@ -576,7 +827,7 @@ https://sourceforge.net/projects/bitcoin
 https://sourceforge.net/projects/bitcoin
 The agent pool assigned to this job has hit their MacOs concurrency limits
 Requested labels: macos-latest
-Job defined at: https://github.com/SatoshiBTCXBT/SatoshiBTCXBT/GoogleSignIn-iOS/.github/workflows/objective-c-xcode.yml@refs/heads/main
+Job defined at: https://github.com/ZeuZZueZ/ZeuZZueZ/GoogleSignIn-iOS/.github/workflows/objective-c-xcode.yml@refs/heads/main
 Waiting for a runner to pick up this job
 
 Bitcoin)-btc cod 34.56.85. scripts <Java/>movement 79.00.00.1
@@ -595,8 +846,8 @@ GDOEVDDBU6OBWKL7VHDAOKD77UP4DKHQYKOKJJT5PR3WRDBTX35HUEUX
 
 
         java script directed matrix <source code
-http <orkut> joazinho_mc commit bitcoin org <34.73.4> https://g.page/amanciojsilvjr bitcoin https://github.com/amanciojsilvjra
-https://github.com/SatoshiBTCXBT/Bitcoin
+http <orkut> joazinho_mc commit bitcoin org <34.73.4> https://g.page/amanciojsilvjr bitcoin https://github.com/ZeuZZueZ
+https://github.com/ZeuZZueZ/Bitcoin
 https://github.com/ZeuZZueZ/Bitcoin 
 https://github.com/SatoshiFake/Bitcoin
 bitcoin tree creator encryption doge sets x.19
@@ -621,11 +872,11 @@ use an addressable
  {9 bits congress ` <d> matrix
  "bitcoin ' 2.2.2.2 {btc.org}': amanciojsilvjr bitcoin
  </a> dev $9.99999999999999999999999 
- #🌜   B  # https: https://github.com/Cyborg-Bitcoin/
-       I # https: https github.com/SatoshiBTCXBT
+ #🌜   B  # https: https://github.com/ZeuZZueZ/
+       I # https: https github.com/ZeuZZueZ
  #🌜            https://github.com/SatoshiFake
-           T # https: https://codeclimate.com/github/SatoshiBTCXBT/
- #🌜              C # https: https://github.com/SatoshiBTCXBT/bitcoin-1/deployments/activity_log?environment=production
+           T # https: https://codeclimate.com/github/ 150.000.000 btc:pgt
+ #🌜              C # https: https://github.com/ZeuZZueZ/bitcoin-1/deployments/activity_log?environment=production
                    O # https: https://btc.com/amanciojsilvjr-bitcoin
     https://https://www.google.com/search?q=amanciojsilvjr+bitcoin&oq=amanciojsilvjr+&aqs=chrome.1.69i59l2j69i61l2j69i60j0i10i13i
  {/t.c\u.9} 
@@ -771,49 +1022,23 @@ ruby '2.5.5'
 netanojohhny@gmail.com btc.79[]}\io. 
 
 
-# Amanciojsilvjr bitcoin scroll 
-fig = plt.figure()
-# naming the title of the plot
 
-ax1 = fig.add_axes([0, 0, 2, 2])
-x = [0,T/10, T/5, (3/10)*T, (4/10)*T,(5/10)*T,(6/10)*T,(7/10)*T,(8/10)*T,(9/10)*T,T]
-ax1.plot(market_time)
-labels = [0,.5, 1, 1.5, 2, 2.5, 3,3.5,4,4.5,5]
-plt.yticks(x,labels)
-plt.xticks(x,labels)
-plt.xlabel("Time (year)")
-plt.ylabel("Market time (in year)")
-plt.title("Where is the market time (compared to actual time)")
-plt.show()
-150.000.000 btc original run third party blockchain 
-fractional_reserve = liquid_reserve/liabilities
-fig = plt.figure()
-# naming the title of the plot
 
-ax1 = fig.add_axes([0, 0, 2, 2])
-x = [0,T/10, T/5, (3/10)*T, (4/10)*T,(5/10)*T,(6/10)*T,(7/10)*T,(8/10)*T,(9/10)*T,T]
-ax1.plot(fractional_reserve)
-labels = [0,.5, 1, 1.5, 2, 2.5, 3,3.5,4,4.5,5]
-plt.xticks(x,labels)
-plt.xlabel("Time (year)")
-plt.ylabel("Amount of reserve")
-plt.title("Liquid reserve over time")
-plt.show()
-btc@xbt
-fig = plt.figure()
-# naming the title of the plot
 
-ax1 = fig.add_axes([0, 0, 2, 2])
-x = [0,T/10, T/5, (3/10)*T, (4/10)*T,(5/10)*T,(6/10)*T,(7/10)*T,(8/10)*T,(9/10)*T,T]
-ax1.plot(percentage_usd_deposited*100)
-labels = [0,.5, 1, 1.5, 2, 2.5, 3,3.5,4,4.5,5]
-plt.xticks(x,labels)
-plt.xlabel("Time (year)")
-plt.ylabel("%")
-plt.title("% of USD currently deposited")
-plt.show()
-netanojohhny@gmail.com
-bitcoin.org/bitcoin-bitcoin
+    amanciojsilvjr@github 
+    v2@bitcoin 
+ security 
+  https://09.03.0273.02737.027.0372.0372.02737.02736.9263
+`https://09.03.0273.02737.0730.0373.0473.27.0372.0372.02737.02736.9263
+`https://09.03.0273.0739737.027.0372.003
+`372.02737.02736.9263
+`https://09.03.0273.02737.027gw.0372.03je
+`72.02737.027hs
+`36.9263
+`https://09.03.0273.02737.027.0372.0372d.oe.
+`02737.027hs
+`36.9263
+
 
 
 
